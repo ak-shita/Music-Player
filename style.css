@@ -1,0 +1,373 @@
+* { 
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family: 'General Sans';
+    letter-spacing: 1px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100vh;
+}
+
+#top {
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10.5vh;
+    background-color: #121421;
+    padding : 10px 45px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 1); /* Bottom shadow */
+}
+
+#top-right {
+    display: flex;
+    align-items: center;
+    gap : 20px;
+}
+
+#top img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#playlist {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding : 10px 15px;
+    border-radius: 50px;
+    background-color: #191c2e;
+    gap : 15px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
+}
+
+#playlist img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#playlist h2 {
+    font-size: 13px;
+    color : #b8c1cd;
+    letter-spacing: 1px;
+} 
+
+#top i {
+    color : #c6ff00;
+    font-size: 25px;
+}
+
+#hero {
+    padding-top: 10.5vh;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+#left {
+    height: 100%;
+    width: 73%;
+    background-color: #121421;
+    flex-direction: column;
+}
+
+#right {
+    margin-left: 73%;
+    box-shadow: -1px 0px 15px rgba(0, 0, 0, 1); 
+    position: absolute;
+    height: 89.5vh;
+    width: 27%;
+    background-color: #11131f;
+    overflow-y: scroll;
+}
+
+#songs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding : 20px 37px 10px 37px; 
+}
+
+#right h4 {
+    color : #535961;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 23px;
+    margin-left: 37px;
+}
+
+.song-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap : 15px;
+    margin-bottom: 15px;
+}
+
+.song-card:hover {
+    background-color: #181a2c;
+}
+
+.song-info {
+    line-height: 21px;
+    pointer-events: none; /*so that it does not respond to events => dets.target = song-card and not h3/img etc.*/
+}
+
+.song-card img {
+    width: 80px;
+    height: 84px;
+    pointer-events: none;
+}
+
+.song-card h3 {
+    font-size: 14px;
+    color : white;
+}
+
+.song-card h2 {
+    font-size: 12px;
+    color : #444851;
+}
+
+.song-card h1{
+    font-size: 11px;
+    color :#c6ff00;
+    font-weight: 600;
+    margin-left: 1px;
+}
+
+#disc {
+    width: 100%;
+    height: 85%;
+    position: relative;
+}
+
+#player {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 45px; 
+    border-top: 1px solid #444851;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 1);
+}
+
+.music {
+    width: 150px;
+    height: 80px;
+    position: relative; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#hide {
+    width: 160px;
+    height: 90px;
+    position: absolute;
+    z-index: 1;
+    background-color: #121421;
+    margin-left: 41px;
+    margin-top: 5px;
+}
+
+.music .bar {
+    width: 7px;
+    border-radius: 7px;
+    animation: loader 1.5s ease-in-out infinite;
+}
+
+@keyframes loader {
+    0%, 100% {
+        height: 2px;
+    }
+
+    50% {
+        height: 60px;
+    }
+}
+
+.music .bar {
+    background-color: #c6ff00;
+}
+
+.music .bar:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.music .bar:nth-child(2) {
+    animation-delay: .8s;
+}
+
+.music .bar:nth-child(3) {
+    animation-delay: .6s;
+}
+
+.music .bar:nth-child(4) {
+    animation-delay: .4s;
+}
+
+.music .bar:nth-child(5) {
+    animation-delay: .2s;
+}
+
+.music .bar:nth-child(6) {
+    animation-delay: .2s;
+}
+
+.music .bar:nth-child(7) {
+    animation-delay: .4s;
+}
+
+.music .bar:nth-child(8) {
+    animation-delay: .6s;
+}
+
+.music .bar:nth-child(9) {
+    animation-delay: .8s;
+}
+
+.music .bar:nth-child(10) {
+    animation-delay: 1s;
+}
+
+#playing-info {
+    margin-right: 30px;
+    text-align: center;
+
+}
+
+#playing-info h1 {
+    color : white;
+    font-size: 23px;
+}
+
+#playing-info h3 {
+    color : #444851;
+    font-size: 15px;
+}
+
+#playing-info h5 {
+    color :#c6ff00;
+    font-size: 12.5px;
+}
+
+#iconset {
+    display: flex;
+    align-items: center;
+    gap : 13px;
+    color : white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#cover {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+#cover>img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    z-index: 1;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+}
+
+.glass{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    z-index: 100;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    /*following 3 lines for creating a frost effect or glass effect*/
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+
+
+}
+
+.glass img {
+    position: absolute;
+    z-index: 999;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+}
+
+.music-control {
+    display: flex; /* Ensure icons are aligned properly */
+    justify-content: center;
+    align-items: center;
+}
+
+#play-btn, #pause-btn {
+    font-size: 80px;
+    line-height: 1; /* Ensure no extra spacing around the icon */
+    color: #c6ff00; /* Change icon color */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 1); /* Hover shadow */
+    border-radius: 50%; /* Round shadow for the icon */
+    background-color: #11131f;
+    position: absolute;
+    z-index : 9999;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #pause-btn {
+    display: none;
+  }
+
+  #forward-btn, #back-btn {
+    font-size: 40px;
+    font-weight: 250;
+    line-height: 1; /* Ensure no extra spacing around the icon */
+    color: #c6ff00; /* Change icon color */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 1); /* Hover shadow */
+    border-radius: 50%; /* Round shadow for the icon */
+    background-color: #11131f;
+    position: absolute;
+    z-index : 9999;
+  }
+
+  #forward-btn {
+    margin-bottom: 200px;
+    margin-left: 600px;
+  }
+
+  #back-btn {
+    margin-bottom: 200px;
+    margin-right: 600px;
+  }
